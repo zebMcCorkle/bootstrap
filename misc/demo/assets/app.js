@@ -41,9 +41,10 @@ angular.module('ui.bootstrap.demo', ['ui.bootstrap', 'plunker', 'ngTouch'], func
       });
   }
 
-});
-
-var builderUrl = "http://50.116.42.77:3001";
+})
+.controller('MainCtrl', MainCtrl)
+.controller('SelectModulesCtrl', SelectModulesCtrl)
+.controller('DownloadCtrl', DownloadCtrl);
 
 function MainCtrl($scope, $http, $document, $modal, orderByFilter) {
   $scope.showBuildModal = function() {
@@ -69,7 +70,7 @@ function MainCtrl($scope, $http, $document, $modal, orderByFilter) {
   };
 }
 
-var SelectModulesCtrl = function($scope, $modalInstance, modules, buildFilesService) {
+function SelectModulesCtrl($scope, $modalInstance, modules, buildFilesService) {
   $scope.selectedModules = [];
   $scope.modules = modules;
 
@@ -206,9 +207,9 @@ var SelectModulesCtrl = function($scope, $modalInstance, modules, buildFilesServ
       return stream.toString();
     }
   };
-};
+}
 
-var DownloadCtrl = function($scope, $modalInstance) {
+function DownloadCtrl($scope, $modalInstance) {
   $scope.options = {
     minified: true,
     tpls: true
@@ -233,7 +234,7 @@ var DownloadCtrl = function($scope, $modalInstance) {
   $scope.cancel = function () {
     $modalInstance.dismiss();
   };
-};
+}
 
 /*
  * The following compatibility check is from:

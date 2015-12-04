@@ -18,7 +18,7 @@ module.exports = function(grunt) {
   grunt.util.linefeed = '\n';
 
   grunt.initConfig({
-    ngversion: '1.2.16',
+    ngversion: '1.3.13',
     bsversion: '3.1.1',
     modules: [],//to be filled in by build task
     pkg: grunt.file.readJSON('package.json'),
@@ -153,8 +153,7 @@ module.exports = function(grunt) {
     changelog: {
       options: {
         dest: 'CHANGELOG.md',
-        templateFile: 'misc/changelog.tpl.md',
-        github: 'angular-ui/bootstrap'
+        templateFile: 'misc/changelog.tpl.md'
       }
     },
     shell: {

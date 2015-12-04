@@ -3,7 +3,7 @@ directive supports multiple placements, optional transition animation, and more.
 
 There are two versions of the tooltip: `tooltip` and `tooltip-html-unsafe`. The
 former takes text only and will escape any HTML provided. The latter takes
-whatever HTML is provided and displays it in a tooltip; it called "unsafe"
+whatever HTML is provided and displays it in a tooltip; it's called "unsafe"
 because the HTML is not sanitized. *The user is responsible for ensuring the
 content is safe to put into the DOM!*
 
@@ -16,6 +16,9 @@ will display:
 - `tooltip-popup-delay`: For how long should the user have to have the mouse
   over the element before the tooltip shows (in milliseconds)? Defaults to 0.
 - `tooltip-trigger`: What should trigger a show of the tooltip?
+  Note: this attribute is no longer observable. See `tooltip-enable`.
+- `tooltip-enable`: Is it enabled? It will enable or disable the configured
+  `tooltip-trigger`.
 - `tooltip-append-to-body`: Should the tooltip be appended to `$body` instead of
   the parent element?
 

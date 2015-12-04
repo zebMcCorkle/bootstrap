@@ -22,6 +22,7 @@ The `open` method returns a modal instance, an object with the following propert
 * `dismiss(reason)` - a method that can be used to dismiss a modal, passing a reason
 * `result` - a promise that is resolved when a modal is closed and rejected when a modal is dismissed
 * `opened` - a promise that is resolved when a modal gets opened after downloading content's template and resolving all variables
+* 'rendered' - a promise that is resolved when a modal is rendered. 
 
 In addition the scope associated with modal's content is augmented with 2 methods:
 
@@ -29,3 +30,8 @@ In addition the scope associated with modal's content is augmented with 2 method
 * `$dismiss(reason)`
 
 Those methods make it easy to close a modal window without a need to create a dedicated controller.
+
+Finally, a `modal.closing` event is broadcast to the modal scope before the modal closes.  If the listener calls 
+preventDefault on the event, then the modal will remain open.  The $close and $dismiss methods return true if the 
+event was allowed.  The event itself includes a parameter for the result/reason and a boolean parameter that indicates
+whether the modal is being closed (true) or dismissed.
